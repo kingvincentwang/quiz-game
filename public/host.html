@@ -1,0 +1,45 @@
+<!-- public/host.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>搶答系統 - 主持人介面</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>搶答系統 - 主持人介面</h1>
+        
+        <div class="card">
+            <h2>遊戲設置</h2>
+            <button id="createGameBtn" class="btn primary">創建新遊戲</button>
+            <div id="gameCode" class="game-code"></div>
+        </div>
+
+        <div class="card">
+            <h2>玩家狀態</h2>
+            <div id="player1Status" class="player-status">
+                玩家1: 未加入
+                <div class="score">分數: 0</div>
+            </div>
+            <div id="player2Status" class="player-status">
+                玩家2: 未加入
+                <div class="score">分數: 0</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>題目控制</h2>
+            <button id="nextQuestionBtn" class="btn">顯示下一題</button>
+            <button id="startBuzzerBtn" class="btn success">開放搶答</button>
+            <button id="resetBuzzerBtn" class="btn warning">重置搶答</button>
+            <div id="currentQuestion" class="current-question"></div>
+            <div id="options" class="options"></div>
+            <div id="buzzerStatus" class="buzzer-status"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/host.js"></script>
+</body>
+</html>

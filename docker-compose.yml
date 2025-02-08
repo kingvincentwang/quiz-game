@@ -1,0 +1,14 @@
+# docker-compose.yml
+version: '3'
+services:
+  quiz-game:
+    build: .
+    container_name: quiz-game
+    ports:
+      - "3002:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    restart: unless-stopped

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>搶答系統 - 玩家介面</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>搶答系統 - 玩家介面</h1>
+        
+        <div class="card join-form" id="joinForm">
+            <h2>加入遊戲</h2>
+            <input type="text" id="gameCodeInput" placeholder="輸入遊戲代碼" class="input">
+            <input type="text" id="playerNameInput" placeholder="輸入玩家名稱" class="input">
+            <button id="joinGameBtn" class="btn primary">加入遊戲</button>
+        </div>
+
+        <div class="card game-area" id="gameArea" style="display: none;">
+            <div class="player-info">
+                <h2 id="playerInfo">玩家資訊</h2>
+                <div id="score" class="score">分數: 0</div>
+            </div>
+
+            <div class="question-area">
+                <h2>當前題目</h2>
+                <div id="currentQuestion" class="current-question"></div>
+                <div id="options" class="options"></div>
+            </div>
+
+            <div class="buzzer-area">
+                <button id="buzzerButton" class="buzzer-button" disabled>搶答!</button>
+            </div>
+
+            <div id="answerSection" class="answer-section" style="display: none;">
+                <h3>請選擇答案：</h3>
+                <div class="answer-options">
+                    <button onclick="submitAnswer('A')" class="btn option-btn">A</button>
+                    <button onclick="submitAnswer('B')" class="btn option-btn">B</button>
+                    <button onclick="submitAnswer('C')" class="btn option-btn">C</button>
+                    <button onclick="submitAnswer('D')" class="btn option-btn">D</button>
+                </div>
+            </div>
+
+            <div id="status" class="status"></div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/player.js"></script>
+</body>
+</html>
