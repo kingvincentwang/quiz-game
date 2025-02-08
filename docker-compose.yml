@@ -1,4 +1,3 @@
-# docker-compose.yml
 version: '3'
 services:
   quiz-game:
@@ -7,8 +6,10 @@ services:
     ports:
       - "3002:3000"
     volumes:
-      - .:/app
-      - /app/node_modules
+      - ./public:/app/public
+      - ./questions.csv:/app/questions.csv
+      - ./server.js:/app/server.js
+      - ./questionBank.js:/app/questionBank.js
     environment:
       - NODE_ENV=development
     restart: unless-stopped
